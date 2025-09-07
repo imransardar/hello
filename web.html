@@ -1,0 +1,1001 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro Solutions Pakistan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style id="app-style">
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .hero-section {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://cdn.pixabay.com/photo/2019/08/08/02/23/factory-4391970_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .gallery-image {
+            transition: transform 0.3s ease;
+            height: 250px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .image-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover .image-caption {
+            transform: translateY(0);
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .pagination-btn.active {
+            background-color: #1d4ed8;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="text-blue-700 font-bold text-2xl">
+                    <span class="text-yellow-500">Electro</span>Solutions
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-800 hover:text-blue-700 font-medium">Home</a>
+                <a href="#about" class="text-gray-800 hover:text-blue-700 font-medium">About</a>
+                <a href="#services" class="text-gray-800 hover:text-blue-700 font-medium">Services</a>
+                <a href="#projects" class="text-gray-800 hover:text-blue-700 font-medium">Projects</a>
+                <a href="#gallery" class="text-gray-800 hover:text-blue-700 font-medium">Gallery</a>
+                <a href="#contact" class="text-gray-800 hover:text-blue-700 font-medium">Contact</a>
+            </nav>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 hover:text-blue-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="mobile-menu fixed top-16 left-0 h-full w-64 bg-white shadow-lg p-5 z-40">
+            <nav class="flex flex-col space-y-4">
+                <a href="#home" class="text-gray-800 hover:text-blue-700 font-medium">Home</a>
+                <a href="#about" class="text-gray-800 hover:text-blue-700 font-medium">About</a>
+                <a href="#services" class="text-gray-800 hover:text-blue-700 font-medium">Services</a>
+                <a href="#projects" class="text-gray-800 hover:text-blue-700 font-medium">Projects</a>
+                <a href="#gallery" class="text-gray-800 hover:text-blue-700 font-medium">Gallery</a>
+                <a href="#contact" class="text-gray-800 hover:text-blue-700 font-medium">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center mt-16">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
+                Welcome to <span class="text-yellow-500">ElectroSolutions</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-8" data-aos="fade-up" data-aos-delay="200">
+                Leading Electrical Solutions in Pakistan
+            </p>
+            <a href="#services" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300 ease-in-out" data-aos="fade-up" data-aos-delay="400">
+                Our Services
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">About Us</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div data-aos="fade-right">
+                    <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+                    <p class="mb-6 text-gray-700 leading-relaxed">
+                        At ElectroSolutions, we are dedicated to providing high-quality electrical solutions across Pakistan. 
+                        With over a decade of experience, we have established ourselves as industry leaders in commercial and 
+                        industrial electrical services.
+                    </p>
+                    <h3 class="text-2xl font-semibold mb-4">Our Values</h3>
+                    <ul class="list-disc pl-5 space-y-2 mb-6 text-gray-700">
+                        <li>Excellence in every project we undertake</li>
+                        <li>Safety as our top priority in all operations</li>
+                        <li>Innovation in electrical solutions</li>
+                        <li>Customer satisfaction guaranteed</li>
+                        <li>Environmental responsibility</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-left">
+                    <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-blue-700 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium">Phone</p>
+                                <p class="text-gray-700">+92-300-1234567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-blue-700 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <p class="text-gray-700">info@electrosolutions.pk</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-700 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium">Lahore Office</p>
+                                <p class="text-gray-700">123 Main Boulevard, Gulberg III, Lahore, Pakistan</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-700 mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium">Pakpattan Office</p>
+                                <p class="text-gray-700">45-B Industrial Area, Pakpattan, Punjab, Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Our Services</h2>
+            <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                We offer comprehensive electrical solutions tailored to meet the specific needs of businesses across Pakistan
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-bolt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Commercial & Industrial Electrical Wiring</h3>
+                    <p class="text-gray-700 mb-4">
+                        Complete wiring solutions for commercial buildings, factories, and industrial facilities with adherence to Pakistani safety standards.
+                    </p>
+                    <p class="text-sm text-blue-700 font-medium">
+                        <i class="fas fa-check-circle mr-1"></i> Top-rated service in Pakistan
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-network-wired text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Cable Tray Installation</h3>
+                    <p class="text-gray-700 mb-4">
+                        Efficient and organized cable management systems for commercial and industrial environments, designed for Pakistani power infrastructure.
+                    </p>
+                    <p class="text-sm text-blue-700 font-medium">
+                        <i class="fas fa-check-circle mr-1"></i> Nationwide service
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-server text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">LT Panels Installation</h3>
+                    <p class="text-gray-700 mb-4">
+                        Low tension panel design and installation for reliable power distribution and control across your facility.
+                    </p>
+                    <p class="text-sm text-blue-700 font-medium">
+                        <i class="fas fa-check-circle mr-1"></i> Custom solutions for Pakistani businesses
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-solar-panel text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Solar & Inverter Work</h3>
+                    <p class="text-gray-700 mb-4">
+                        Sustainable energy solutions with solar panel installation and inverter systems, optimized for Pakistan's climate conditions.
+                    </p>
+                    <p class="text-sm text-blue-700 font-medium">
+                        <i class="fas fa-check-circle mr-1"></i> Energy-saving solutions
+                    </p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-exchange-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">BTD Installation</h3>
+                    <p class="text-gray-700 mb-4">
+                        Busbar Trunking Distribution systems installation for efficient power transmission in large facilities.
+                    </p>
+                    <p class="text-sm text-blue-700 font-medium">
+                        <i class="fas fa-check-circle mr-1"></i> Industry leading expertise
+                    </p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-blue-700 mb-4">
+                        <i class="fas fa-tools text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Maintenance & Repair</h3>
+                    <p class="text-gray-700 mb-4">
+                        Regular maintenance and emergency repair services for all electrical systems, available throughout Pakistan.
+                    </p>
+                    <p class="text-sm text-blue-700 font-medium">
+                        <i class="fas fa-check-circle mr-1"></i> 24/7 support available
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Our Projects</h2>
+            <p class="text-center text-gray-700 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Track record of excellence across Pakistan with successful project completions
+            </p>
+            
+            <div class="mb-6 flex justify-end" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative">
+                    <input type="file" id="project-upload" accept=".json" class="hidden" />
+                    <label for="project-upload" class="bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-4 rounded-lg cursor-pointer inline-flex items-center">
+                        <i class="fas fa-upload mr-2"></i> Import Projects (JSON)
+                    </label>
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto bg-white rounded-lg shadow" data-aos="fade-up" data-aos-delay="400">
+                <table id="projects-table" class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" data-sort="year">
+                                Year <i class="fas fa-sort ml-1"></i>
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" data-sort="location">
+                                Location <i class="fas fa-sort ml-1"></i>
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" data-sort="highlight">
+                                Work Highlight <i class="fas fa-sort ml-1"></i>
+                            </th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer" data-sort="company">
+                                Company <i class="fas fa-sort ml-1"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200" id="projects-data">
+                        <!-- This will be populated dynamically -->
+                        <tr>
+                            <td colspan="4" class="px-6 py-12 text-center text-gray-500">
+                                <div class="flex flex-col items-center">
+                                    <i class="fas fa-file-import text-4xl mb-3"></i>
+                                    <p>Please import project data or add projects</p>
+                                    <p class="text-sm mt-2">Sample projects will be shown here</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="mt-6 flex justify-between items-center" id="pagination-container" data-aos="fade-up" data-aos-delay="500">
+                <div>
+                    <span id="pagination-info">Showing 0 of 0 entries</span>
+                </div>
+                <div class="flex space-x-2" id="pagination-buttons">
+                    <!-- Pagination buttons will be added here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Our Gallery</h2>
+            <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Take a look at our work and the quality of our electrical installations
+            </p>
+            
+            <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="image-container rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://cdn.pixabay.com/photo/2017/03/19/01/43/living-room-2155376_1280.jpg" alt="Modern Electrical Installation" class="gallery-image">
+                    <div class="image-caption">Modern Home Wiring</div>
+                </div>
+                <div class="image-container rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://cdn.pixabay.com/photo/2020/01/26/21/57/computer-4796017_1280.jpg" alt="Server Room" class="gallery-image">
+                    <div class="image-caption">Industrial Control Panel</div>
+                </div>
+                <div class="image-container rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/18/18/38/voltage-1836009_1280.jpg" alt="LT Panel" class="gallery-image">
+                    <div class="image-caption">LT Panel Installation</div>
+                </div>
+                <div class="image-container rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/14/03/03/ama-dablam-2064522_1280.jpg" alt="Solar Panels" class="gallery-image">
+                    <div class="image-caption">Solar Panel System</div>
+                </div>
+                <div class="image-container rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://cdn.pixabay.com/photo/2018/04/16/10/33/factory-3324843_1280.jpg" alt="Industrial Wiring" class="gallery-image">
+                    <div class="image-caption">Industrial Electrical Setup</div>
+                </div>
+                <div class="image-container rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://cdn.pixabay.com/photo/2018/02/27/11/10/workplace-3185431_1280.jpg" alt="Commercial Setup" class="gallery-image">
+                    <div class="image-caption">Commercial Electrical Work</div>
+                </div>
+                <div class="image-container rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="700">
+                    <img src="https://cdn.pixabay.com/photo/2018/03/10/12/00/teamwork-3213924_1280.jpg" alt="Team Work" class="gallery-image">
+                    <div class="image-caption">Our Expert Team at Work</div>
+                </div>
+                <div class="image-container rounded-lg overflow-hidden shadow-md" data-aos="fade-up" data-aos-delay="800">
+                    <img src="https://cdn.pixabay.com/photo/2017/04/26/10/08/power-supply-2262235_1280.jpg" alt="Cable Tray" class="gallery-image">
+                    <div class="image-caption">Cable Tray Installation</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button id="load-more-gallery" class="bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-6 rounded-lg transition duration-300 ease-in-out">
+                    <i class="fas fa-images mr-2"></i> Load More Images
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">Contact Us</h2>
+            <p class="text-center text-gray-700 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Get in touch with us for any inquiries or to discuss your project requirements
+            </p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div data-aos="fade-right">
+                    <form id="contact-form" class="bg-white shadow-md rounded-lg p-6">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-700" placeholder="Your Name" required>
+                            <span id="name-error" class="text-red-500 text-sm hidden">Please enter your name</span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-700" placeholder="your@email.com" required>
+                            <span id="email-error" class="text-red-500 text-sm hidden">Please enter a valid email address</span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-700" placeholder="Subject of your message" required>
+                            <span id="subject-error" class="text-red-500 text-sm hidden">Please enter a subject</span>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-700" placeholder="Your message here..." required></textarea>
+                            <span id="message-error" class="text-red-500 text-sm hidden">Please enter your message</span>
+                        </div>
+                        
+                        <button type="submit" id="submit-form" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-medium py-2 px-6 rounded-lg transition duration-300 ease-in-out flex justify-center items-center">
+                            <span>Send Message</span>
+                            <div id="loading-spinner" class="hidden ml-2">
+                                <i class="fas fa-circle-notch fa-spin"></i>
+                            </div>
+                        </button>
+                        
+                        <div id="form-message" class="mt-4 text-center hidden"></div>
+                    </form>
+                    
+                    <div class="mt-8 flex justify-center space-x-6">
+                        <a href="javascript:void(0)" class="text-blue-700 hover:text-blue-800 text-2xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="text-blue-700 hover:text-blue-800 text-2xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="text-blue-700 hover:text-blue-800 text-2xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="text-blue-700 hover:text-blue-800 text-2xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="javascript:void(0)" class="text-blue-700 hover:text-blue-800 text-2xl">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="h-96 bg-gray-200 rounded-lg overflow-hidden shadow-md">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108996.63282177384!2d74.24294529999999!3d31.47275405!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1672922358221!5m2!1sen!2s" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    
+                    <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Visit Our Offices</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-building text-blue-700 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-medium">Lahore Office</p>
+                                    <p class="text-gray-700">123 Main Boulevard, Gulberg III, Lahore, Pakistan</p>
+                                    <p class="text-gray-700">9:00 AM - 6:00 PM (Monday - Saturday)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-building text-blue-700 mt-1 mr-3"></i>
+                                <div>
+                                    <p class="font-medium">Pakpattan Office</p>
+                                    <p class="text-gray-700">45-B Industrial Area, Pakpattan, Punjab, Pakistan</p>
+                                    <p class="text-gray-700">9:00 AM - 5:00 PM (Monday - Friday)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <div class="font-bold text-2xl mb-4">
+                        <span class="text-yellow-500">Electro</span>Solutions
+                    </div>
+                    <p class="mb-6 text-gray-300">
+                        Providing top-quality electrical solutions across Pakistan since 2010. Trusted by businesses and industries nationwide.
+                    </p>
+                    <div class="space-y-2">
+                        <p class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-blue-500"></i>
+                            123 Main Boulevard, Gulberg III, Lahore, Pakistan
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-blue-500"></i>
+                            +92-300-1234567
+                        </p>
+                        <p class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-blue-500"></i>
+                            info@electrosolutions.pk
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-300 hover:text-white transition duration-300">Home</a></li>
+                            <li><a href="#about" class="text-gray-300 hover:text-white transition duration-300">About Us</a></li>
+                            <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">Services</a></li>
+                            <li><a href="#projects" class="text-gray-300 hover:text-white transition duration-300">Projects</a></li>
+                            <li><a href="#gallery" class="text-gray-300 hover:text-white transition duration-300">Gallery</a></li>
+                            <li><a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4">Our Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">Electrical Wiring</a></li>
+                            <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">Cable Tray Installation</a></li>
+                            <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">LT Panels</a></li>
+                            <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">Solar & Inverter Work</a></li>
+                            <li><a href="#services" class="text-gray-300 hover:text-white transition duration-300">BTD Installation</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 ElectroSolutions. All rights reserved.
+                </p>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <script id="app-script">
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Sample Projects Data (will be replaced by user uploaded data)
+        let projectsData = [
+            {
+                year: 2023,
+                location: "Lahore",
+                highlight: "Complete Electrical Wiring for Shopping Mall",
+                company: "Metro Mall"
+            },
+            {
+                year: 2022,
+                location: "Karachi",
+                highlight: "Solar Panel Installation",
+                company: "Green Energy Ltd"
+            },
+            {
+                year: 2022,
+                location: "Islamabad",
+                highlight: "LT Panel Setup for Office Building",
+                company: "Blue Tower Complex"
+            },
+            {
+                year: 2021,
+                location: "Faisalabad",
+                highlight: "Industrial Cable Tray Installation",
+                company: "Textile Industries Pakistan"
+            },
+            {
+                year: 2021,
+                location: "Multan",
+                highlight: "BTD Installation for Hotel",
+                company: "Pearl Continental"
+            }
+        ];
+
+        // Projects Table Logic
+        const projectsTable = document.getElementById('projects-table');
+        const projectsData_el = document.getElementById('projects-data');
+        const paginationContainer = document.getElementById('pagination-container');
+        const paginationInfo = document.getElementById('pagination-info');
+        const paginationButtons = document.getElementById('pagination-buttons');
+        
+        let currentPage = 1;
+        const itemsPerPage = 5;
+        let currentSort = { field: 'year', direction: 'desc' };
+
+        // JSON File Upload
+        document.getElementById('project-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (Array.isArray(data)) {
+                        projectsData = data;
+                        localStorage.setItem('projectsData', JSON.stringify(projectsData));
+                        renderProjects();
+                        alert('Projects data imported successfully!');
+                    } else {
+                        alert('Invalid data format. Please upload a valid JSON array.');
+                    }
+                } catch (error) {
+                    alert('Error parsing JSON file: ' + error);
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        // Check for saved project data in local storage
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedData = localStorage.getItem('projectsData');
+            if (savedData) {
+                try {
+                    projectsData = JSON.parse(savedData);
+                } catch (error) {
+                    console.error('Error parsing saved projects data:', error);
+                }
+            }
+            renderProjects();
+        });
+
+        // Project Sorting Logic
+        const sortableHeaders = document.querySelectorAll('th[data-sort]');
+        sortableHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const field = header.getAttribute('data-sort');
+                
+                // Toggle sort direction if clicking on the same field
+                if (currentSort.field === field) {
+                    currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                } else {
+                    currentSort = { field, direction: 'asc' };
+                }
+                
+                sortProjects();
+                renderProjects();
+            });
+        });
+
+        function sortProjects() {
+            projectsData.sort((a, b) => {
+                const aValue = a[currentSort.field];
+                const bValue = b[currentSort.field];
+                
+                if (typeof aValue === 'string') {
+                    return currentSort.direction === 'asc' 
+                        ? aValue.localeCompare(bValue) 
+                        : bValue.localeCompare(aValue);
+                } else {
+                    return currentSort.direction === 'asc' 
+                        ? aValue - bValue 
+                        : bValue - aValue;
+                }
+            });
+        }
+
+        // Pagination Logic
+        function renderPagination() {
+            const totalPages = Math.ceil(projectsData.length / itemsPerPage);
+            const startItem = (currentPage - 1) * itemsPerPage + 1;
+            const endItem = Math.min(startItem + itemsPerPage - 1, projectsData.length);
+            
+            paginationInfo.textContent = `Showing ${startItem} to ${endItem} of ${projectsData.length} entries`;
+            
+            paginationButtons.innerHTML = '';
+            
+            // Previous button
+            if (totalPages > 1) {
+                const prevButton = document.createElement('button');
+                prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevButton.className = 'pagination-btn border border-gray-300 px-3 py-1 rounded-md ' + 
+                                     (currentPage === 1 ? 'text-gray-400 cursor-not-allowed' : 'hover:bg-gray-100');
+                prevButton.disabled = currentPage === 1;
+                prevButton.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        renderProjects();
+                    }
+                });
+                paginationButtons.appendChild(prevButton);
+            }
+            
+            // Page buttons
+            for (let i = 1; i <= totalPages; i++) {
+                if (totalPages <= 5 || i === 1 || i === totalPages || 
+                    (i >= currentPage - 1 && i <= currentPage + 1)) {
+                    const pageButton = document.createElement('button');
+                    pageButton.textContent = i;
+                    pageButton.className = 'pagination-btn border border-gray-300 px-3 py-1 rounded-md ' + 
+                                         (i === currentPage ? 'active' : 'hover:bg-gray-100');
+                    pageButton.addEventListener('click', () => {
+                        currentPage = i;
+                        renderProjects();
+                    });
+                    paginationButtons.appendChild(pageButton);
+                } else if ((i === currentPage - 2 && currentPage > 3) || 
+                           (i === currentPage + 2 && currentPage < totalPages - 2)) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.className = 'px-2 py-1';
+                    paginationButtons.appendChild(ellipsis);
+                }
+            }
+            
+            // Next button
+            if (totalPages > 1) {
+                const nextButton = document.createElement('button');
+                nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextButton.className = 'pagination-btn border border-gray-300 px-3 py-1 rounded-md ' + 
+                                     (currentPage === totalPages ? 'text-gray-400 cursor-not-allowed' : 'hover:bg-gray-100');
+                nextButton.disabled = currentPage === totalPages;
+                nextButton.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        renderProjects();
+                    }
+                });
+                paginationButtons.appendChild(nextButton);
+            }
+        }
+
+        // Render Projects Table
+        function renderProjects() {
+            // Get current page items
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const currentItems = projectsData.slice(start, end);
+            
+            // Clear table
+            projectsData_el.innerHTML = '';
+            
+            // No projects case
+            if (projectsData.length === 0) {
+                const emptyRow = document.createElement('tr');
+                emptyRow.innerHTML = `
+                    <td colspan="4" class="px-6 py-12 text-center text-gray-500">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-file-import text-4xl mb-3"></i>
+                            <p>Please import project data or add projects</p>
+                            <p class="text-sm mt-2">Sample projects will be shown here</p>
+                        </div>
+                    </td>
+                `;
+                projectsData_el.appendChild(emptyRow);
+                paginationContainer.classList.add('hidden');
+                return;
+            }
+            
+            paginationContainer.classList.remove('hidden');
+            
+            // Add rows
+            currentItems.forEach((project, index) => {
+                const row = document.createElement('tr');
+                row.className = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
+                
+                row.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap">${project.year}</td>
+                    <td class="px-6 py-4">${project.location}</td>
+                    <td class="px-6 py-4">${project.highlight}</td>
+                    <td class="px-6 py-4">${project.company}</td>
+                `;
+                
+                projectsData_el.appendChild(row);
+            });
+            
+            renderPagination();
+        }
+        
+        // Initialize Projects Table
+        sortProjects();
+        renderProjects();
+
+        // Contact Form Validation & Submission
+        const contactForm = document.getElementById('contact-form');
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const subjectInput = document.getElementById('subject');
+        const messageInput = document.getElementById('message');
+        const submitButton = document.getElementById('submit-form');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const formMessage = document.getElementById('form-message');
+        
+        // Form validation
+        function validateEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email.toLowerCase());
+        }
+        
+        function validateForm() {
+            let isValid = true;
+            
+            // Name validation
+            if (nameInput.value.trim() === '') {
+                document.getElementById('name-error').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('name-error').classList.add('hidden');
+            }
+            
+            // Email validation
+            if (emailInput.value.trim() === '' || !validateEmail(emailInput.value)) {
+                document.getElementById('email-error').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('email-error').classList.add('hidden');
+            }
+            
+            // Subject validation
+            if (subjectInput.value.trim() === '') {
+                document.getElementById('subject-error').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('subject-error').classList.add('hidden');
+            }
+            
+            // Message validation
+            if (messageInput.value.trim() === '') {
+                document.getElementById('message-error').classList.remove('hidden');
+                isValid = false;
+            } else {
+                document.getElementById('message-error').classList.add('hidden');
+            }
+            
+            return isValid;
+        }
+        
+        // Form submission
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) return;
+            
+            // Show loading spinner
+            submitButton.disabled = true;
+            loadingSpinner.classList.remove('hidden');
+            
+            // Simulate form submission (would be replaced with actual API call)
+            setTimeout(() => {
+                // Hide loading spinner
+                loadingSpinner.classList.add('hidden');
+                submitButton.disabled = false;
+                
+                // Show success message
+                formMessage.classList.remove('hidden', 'text-red-500');
+                formMessage.classList.add('text-green-500');
+                formMessage.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Your message has been sent successfully!';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            }, 1500);
+        });
+        
+        // Real-time validation
+        nameInput.addEventListener('blur', () => {
+            if (nameInput.value.trim() === '') {
+                document.getElementById('name-error').classList.remove('hidden');
+            } else {
+                document.getElementById('name-error').classList.add('hidden');
+            }
+        });
+        
+        emailInput.addEventListener('blur', () => {
+            if (emailInput.value.trim() === '' || !validateEmail(emailInput.value)) {
+                document.getElementById('email-error').classList.remove('hidden');
+            } else {
+                document.getElementById('email-error').classList.add('hidden');
+            }
+        });
+        
+        subjectInput.addEventListener('blur', () => {
+            if (subjectInput.value.trim() === '') {
+                document.getElementById('subject-error').classList.remove('hidden');
+            } else {
+                document.getElementById('subject-error').classList.add('hidden');
+            }
+        });
+        
+        messageInput.addEventListener('blur', () => {
+            if (messageInput.value.trim() === '') {
+                document.getElementById('message-error').classList.remove('hidden');
+            } else {
+                document.getElementById('message-error').classList.add('hidden');
+            }
+        });
+        
+        // Gallery Load More Button
+        const loadMoreGalleryBtn = document.getElementById('load-more-gallery');
+        const galleryContainer = document.getElementById('gallery-container');
+        let galleryPage = 1;
+        
+        loadMoreGalleryBtn.addEventListener('click', function() {
+            // Simulate loading more images (would connect to API in real app)
+            galleryPage++;
+            
+            // If we've loaded 2 pages, disable the button
+            if (galleryPage >= 2) {
+                loadMoreGalleryBtn.disabled = true;
+                loadMoreGalleryBtn.classList.add('bg-gray-400');
+                loadMoreGalleryBtn.classList.remove('bg-blue-700', 'hover:bg-blue-800');
+                loadMoreGalleryBtn.innerHTML = '<i class="fas fa-check mr-2"></i> All Images Loaded';
+            }
+        });
+        
+        // Sticky header logic
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                document.querySelector('header').classList.add('shadow-lg');
+            } else {
+                document.querySelector('header').classList.remove('shadow-lg');
+            }
+        });
+    </script>
+</body>
+</html>
